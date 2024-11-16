@@ -1,21 +1,17 @@
 import { Hono } from "hono";
+import { blogCreate } from "../controllers/blog/blogCreate";
+import { blogUpdate } from "../controllers/blog/blogUpdate";
+import { blogGet } from "../controllers/blog/blogGet";
+import { blogBulk } from "../controllers/blog/blogBulk";
 
-const blogRouter = new Hono()
+const blogRouter = new Hono();
 
-blogRouter.post("/", (c) => {
-    return c.text("");
-})
+blogRouter.get("/bulk", blogBulk)
 
-blogRouter.put("/", (c) => {
-    return c.text("");
-})
+blogRouter.get("/:id", blogGet)
 
-blogRouter.get("/:id", (c) => {
-    return c.text("");
-})
+blogRouter.post("/", blogCreate)
 
-blogRouter.get("/bulk", (c) => {
-    return c.text("");
-})
+blogRouter.put("/", blogUpdate)
 
 export default blogRouter;
