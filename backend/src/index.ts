@@ -9,7 +9,8 @@ const app = new Hono <{
         JWT_KEY: string
     },
     Variables: {
-        prisma: PrismaClient
+        prisma: PrismaClient,
+        userId: string
     }
 }> ()
 
