@@ -8,6 +8,7 @@
   "dependencies": {
     "@prisma/client": "^5.22.0",
     "@prisma/extension-accelerate": "^1.2.1",
+    "@yoii18/validation": "^1.0.0",
     "hono": "^4.6.9",
     "prisma": "^5.22.0"
   },
