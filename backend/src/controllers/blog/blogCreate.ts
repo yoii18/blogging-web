@@ -17,7 +17,8 @@ export const blogCreate = async (c: Context) => {
             })
             return c.json({
                 msg: "POSTED",
-                title: blog.title
+                title: blog.title,
+                id: blog.id
             });
         } else{
             c.status(411);

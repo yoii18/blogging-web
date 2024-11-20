@@ -21,7 +21,7 @@ export const signIn = async (c: Context) => {
                 return c.text("unauthorized creds");
             } else{
                 const jwt = await sign(user.id, c.env.JWT_KEY)
-                return c.text(`Signin Successful, jwt: ${jwt}`);
+                return c.text(`Bearer ${jwt}`);
             }
         } else{
             c.status(411)
