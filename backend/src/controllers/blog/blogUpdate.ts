@@ -20,7 +20,8 @@ export const blogUpdate = async (c: Context) => {
             })
             return c.json({
                 msg: "UPDATED",
-                title: blog.title
+                title: blog.title,
+                id: blog.id
             });
         } else{
             c.status(403);

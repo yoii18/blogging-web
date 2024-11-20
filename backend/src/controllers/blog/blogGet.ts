@@ -7,12 +7,20 @@ export const blogGet = async (c: Context) => {
         const blog = await prisma.blog.findFirst({
             where: {
                 id: id
+            },
+            select: {
+                content: true,
+                title: true,
+                id: true,
+                author: {
+                    select: {
+                        name: true
+                    }
+                }
             }
         })
         return c.json({
-            msg: "FETCHED",
-            title: blog.title,
-            content: blog.content
+            blog: blog
         });
     }catch(e){
         c.status(403);
